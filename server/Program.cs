@@ -19,12 +19,12 @@ namespace server
             {
                 var response = new FormatResponse
                 {
-                    Content = message.Content.ToUpper(),
+                    Content = message.Content.ToUpper() + "!",
                     Ms = 10
                 };
 
                 CodedOutputStream codedOutput = new CodedOutputStream(stdout);
-                codedOutput.WriteFixed32((uint)message.CalculateSize());
+                codedOutput.WriteFixed32((uint)response.CalculateSize());
                 response.WriteTo(codedOutput);
                 codedOutput.Flush();
             }
