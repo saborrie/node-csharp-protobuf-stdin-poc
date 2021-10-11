@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option csharp_namespace = "Formatter.Protos";
+
+
+message FormatRequest {
+    string content = 1;
+    bool setting1 = 2;
+}
+
+message FormatResponse {
+  string content = 1;
+  int32 ms = 2;
+}
